@@ -75,8 +75,9 @@ SELECT * FROM silver.erp_loc_a101
 
 
 
-
+--========================
 -- erp_cat_g1v2 table
+--========================
 INSERT INTO silver.erp_PX_CAT_g1v2(
     id, cat, subcat, maintenance
 )
