@@ -15,6 +15,7 @@ how to execute:
 ====================================================================
 */
 
+
 CREATE OR ALTER PROCEDURE bronze.load_bronze AS
 
 BEGIN
@@ -40,6 +41,7 @@ BEGIN
             WITH (
                 FIRSTROW = 2,
                 FIELDTERMINATOR = ',',
+                ROWTERMINATOR = '0x0d0a', -- to fix hidden character (/r) that give trouble when inserting into silver layer
                 TABLOCK 
             );
             SET @end_time = GETDATE();
@@ -57,6 +59,7 @@ BEGIN
             WITH (
                 FIRSTROW = 2,
                 FIELDTERMINATOR = ',',
+                ROWTERMINATOR = '0x0d0a',
                 TABLOCK 
             );
             SET @end_time = GETDATE();
@@ -73,6 +76,7 @@ BEGIN
             WITH (
                 FIRSTROW = 2,
                 FIELDTERMINATOR = ',',
+                ROWTERMINATOR = '0x0d0a',
                 TABLOCK 
             );
             SET @end_time = GETDATE ();
@@ -92,6 +96,7 @@ BEGIN
             WITH (
                 FIRSTROW = 2,
                 FIELDTERMINATOR = ',',
+                ROWTERMINATOR = '0x0d0a',
                 TABLOCK 
             );
             SET @end_time = GETDATE();
@@ -108,6 +113,7 @@ BEGIN
             WITH (
                 FIRSTROW = 2,
                 FIELDTERMINATOR = ',',
+                ROWTERMINATOR = '0x0d0a', -- TEST TO MAKE TRIM WORK IN SILVER LAYER
                 TABLOCK 
             );
             SET @end_time = GETDATE();
@@ -124,6 +130,7 @@ BEGIN
             WITH (
                 FIRSTROW = 2,
                 FIELDTERMINATOR = ',',
+                ROWTERMINATOR = '0x0d0a',
                 TABLOCK 
             );
             SET @end_time = GETDATE();
@@ -143,5 +150,7 @@ BEGIN
         PRINT  'ERROR MESSAGE' + CAST(ERROR_NUMBER()AS NVARCHAR);
         PRINT  'ERROR MESSAGE' + CAST(ERROR_STATE()AS NVARCHAR);
         PRINT '=============================='
+    END CATCH
+END============================'
     END CATCH
 END
