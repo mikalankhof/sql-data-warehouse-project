@@ -2,7 +2,7 @@
 
 Welcome to my **Data Warehouse and Analytics Project** repository!
 
-This project demonstrates a comprehensive data warehousing and analytics solution. From bulding a data warehouse to generating acionable insights. Designed as a porfolio project.
+This project demonstrates a comprehensive data warehousing and analytics solution. From bulding a data warehouse to generating actionable insights. Designed as a porfolio project.
 
 --
 ## Project Requirements
