@@ -2,10 +2,12 @@
 ===================================================================
 Stored Procedure: Loading Data into silver layer
 ===================================================================
-This script creates a Stored Procedure for inserting data into the silver tables.
+This script performs the ETL process (Extract, Transform, and Load) to load the data from the bronze layer into the silver layer.
+It creates a Stored Procedure.
+
 By running this script you:
 - truncate the tables
-- insert data into tables
+- insert cleaned data into tables
 
 Parameters:
   None
