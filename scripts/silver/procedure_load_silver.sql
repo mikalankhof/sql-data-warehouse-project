@@ -205,6 +205,11 @@ BEGIN
         PRINT'>>Load Duration: ' + CAST(DATEDIFF(second, @start_time, @end_time) AS NVARCHAR) + ' seconds'
         PRINT '------------------------';
     END TRY
+      SET @batch_end_time = GETDATE();
+        PRINT '====================================='
+        PRINT 'Loading silver Layer is completed';
+        PRINT ' - Total Load Duration Batch: ' + CAST(DATEDIFF(second, @batch_start_time, @batch_end_time) AS NVARCHAR) + ' seconds'
+        PRINT '====================================='
      BEGIN CATCH
         PRINT '=============================='
         PRINT 'ERROR Ocurred during Load Silver Layer'
