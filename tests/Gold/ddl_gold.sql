@@ -12,9 +12,9 @@ Usage:
 ===========================================================
 */
 
-===========================================================
+--===========================================================
 --Customer Dimension Table (gold.dim_customers
-===========================================================
+--===========================================================
 CREATE VIEW gold.dim_customers AS 
 SELECT
     ROW_NUMBER() OVER (ORDER BY cst_id) AS customer_key,
@@ -34,9 +34,9 @@ ON        ci.cst_key = ca.cid
 LEFT JOIN silver.erp_loc_a101 la
 ON        ci.cst_key =  la.loc_cid
 
-===========================================================
+--===========================================================
 -- Product dimension table (gold.dim_products)
-===========================================================
+--===========================================================
   
 CREATE VIEW gold.dim_products AS
 SELECT 
@@ -57,9 +57,9 @@ LEFT JOIN silver.erp_PX_CAT_g1v2 pc
 ON pn.cat_id = pc.id
 WHERE prd_end_dt IS NULL -- filter for current products, they have no end date
 
-===========================================================
+--===========================================================
   --Create Fact Table (gold.fact_sales
-===========================================================
+--===========================================================
 CREATE VIEW gold.fact_sales AS
 SELECT 
 sd.sls_ord_num AS order_number,
