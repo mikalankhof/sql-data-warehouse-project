@@ -3,7 +3,8 @@
 This script creates a ready to use customer report as a view in the gold layer. 
 The view is made up out of multiple CTE's, doing various transformations to get an easy to use and read report about the customers.
 ===================================================
-
+Usage:
+    SELECT * FROM gold.report_customers
 */
 CREATE VIEW gold.report_customers AS
 
